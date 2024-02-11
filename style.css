@@ -1,0 +1,296 @@
+/* Add CSS here */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+/*===== VARIABLES CSS =====*/
+
+:root {
+    --h1-fs: 2rem;    --h1-fs-media: 3rem; 
+    --h2-fs: 1.5rem;  --h2-fs-media: 2rem;
+    --h3-fs: 1.3rem;  --h3-fs-media: 1.8rem;
+    --h4-fs: 1.1rem;  --h4-fs-media: 1.5rem;
+    --p-fs: .85rem;    --p-fs-media: 1.1rem;
+    --a-fs: .8rem;    --a-fs-media: 1.1rem;
+    --li-fs: .8rem;   --li-fs-media: 1.1rem;    
+
+    --clr-bg-main: #ddf1f1;
+    --clr-bg-pri: #a9e5e7;
+    --clr-bg-sec: #f3fafa;
+    --clr-acc-main: #00bea6;
+    --clr-acc-pri: #009885;
+    --clr-acc-sec: #33cbb8;
+    --clr-acc-thi: #d80000;
+    --clr-acc-four: #ad0000;
+    --clr-acc-fif: #e03333;
+    --clr-text-main: #67696a;
+    --clr-text-pri: #36454F;  
+    
+    --shadow-color: #33cbb8;    
+    --main-ff: 'Poppins', sans-serif;
+  }
+
+/*===== BASE =====*/
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--main-ff);
+    font-size: var(--p-fs);
+    background: var(--clr-bg-main);
+    color: var(--clr-text-main);
+    width: 100%;
+    min-height: 100vh;
+}   
+
+h1, h2, h3, h4,
+p, a, li {
+    margin: 0;
+}
+
+h1 {font-size: var(--h1-fs);}
+h2 {font-size: var(--h2-fs);}
+h3 {font-size: var(--h3-fs);}
+h4 {font-size: var(--h4-fs);}
+
+p, a, li, span {font-size: var(--p-fs);}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--clr-text-main);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+
+    }
+}
+    /* animation: scaleUp 1s ease-in-out;
+    transform-origin: center center; */
+
+/*===== BUTTONS =====*/
+
+
+
+.btn {
+    display: block;
+    background-color:  var(--clr-bg-pri);
+    color: var(--clr-text-main);
+    position: relative;
+    padding: 0 1.5rem;
+    height: 100%;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+    margin-left: auto;
+    justify-self: flex-end;
+    transition: .5s;
+    transform: translateX(100vw);
+}
+
+.btn.active {
+    transform: translateX(0);
+}
+
+
+  
+.btn:hover {
+    box-shadow: 0 10px 36px rgba(0, 0, 0, .15);
+}
+
+.btn:active {
+    scale: .97;
+}
+
+/*===== PROJECT CSS =====*/
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 400px;
+    width: 400px;
+    display: inline-block;
+    background-color: #fff;
+    position: relative;
+    animation: scaleUp 1s ease-in-out;
+    transform-origin: center center;
+    box-shadow: 0px 8px 30px -10px var(--clr-bg-pri);
+    padding: 2rem;
+    border-radius: 1.5rem;
+}
+
+.container > p {
+    margin-bottom: 1rem;
+}
+
+.container > p span {
+    text-decoration: underline;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fa-plus {
+    color: white;
+}
+
+i {
+    cursor: pointer;
+}
+
+.no {
+    display: inline-block;
+    font-size: var(--h4-fs);
+}
+
+h4 {
+    margin-top: 2rem;
+}
+
+.check-form {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin: .3rem 0;
+    width: max-content;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: #fff;
+    border: 1px solid lightgray;
+    transition: .3s;
+    border-radius: .25rem;
+  }
+
+  .groceries {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .check-form:hover input ~ .checkmark {
+    background-color: #eee;
+
+  }
+  
+  .check-form input:checked ~ .checkmark {
+    border: 1px solid lightgray;
+  }
+  
+  
+  .check-form input:checked ~ .checkmark:after {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .check-form .checkmark:after {
+    content: "";
+    position: absolute;
+    transition: .3s;
+    left: 50%;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    background: var(--clr-bg-pri);
+    transition: .5s;
+    transform: translate(-50%, -50%) scale(0);
+    /* animation: scaleUp .5 ease-in-out 1s backwards; */
+  }
+
+.check-form .checkmark:after, .checkmark {
+    border-radius: 50%;
+  }
+
+.add {
+    margin-top: 1rem;;
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+form {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    margin-left: .4rem;
+    gap: 1rem;
+    transition: .5s;
+}
+
+form.active {
+    left: 0;
+}
+
+.add input {
+    height: 2rem;
+    width: 200px;
+    border: 1px solid var(--clr-bg-pri);
+    border-radius: .25rem;
+    background-color: transparent;
+    padding: 0 .5rem;
+}
+
+.add input:focus {
+    outline: none;
+}
+
+h4 {
+    margin-top: 1rem;
+}
+

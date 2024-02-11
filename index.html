@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groceries List</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h3>Groceries</h3>
+            <i class="fa-solid fa-ellipsis"></i>
+        </header>
+        <p>Shared with <span>1 person</span></p>
+        <div class="groceries">
+            <label class="check-form">
+                <input type="checkbox">
+                <span class="checkmark"></span>
+                <span>Eggs</span>
+            </label>
+            <label class="check-form">
+                <input type="checkbox">
+                <span class="checkmark"></span>
+                <span>Tomatoes</span>
+            </label>
+            <label class="check-form">
+                <input type="checkbox">
+                <span class="checkmark"></span>
+                <span>Avocado</span>
+            </label>
+        </div>
+        <h4>COMPLETED (<span class="no">4</span>)</h4>
+        <div class="completed">
+            <label class="check-form">
+                <input type="checkbox" checked>
+                <span class="checkmark"></span>
+                <span>Egg noodles</span>
+            </label>
+            <label class="check-form">
+                <input type="checkbox" checked>
+                <span class="checkmark"></span>
+                <span>Scampi</span>
+            </label>
+            <label class="check-form">
+                <input type="checkbox" checked>
+                <span class="checkmark"></span>
+                <span>Orange juice</span>
+            </label>
+            <label class="check-form">
+                <input type="checkbox" checked>
+                <span class="checkmark"></span>
+                <span>Apples</span>
+            </label>
+        </div>
+        <div class="add">
+            <button class="btn active"><i class="fa-solid fa-plus"></i></button>
+            <form action="javascript:void(0)">
+                <i class="fa-solid fa-xmark"></i>
+                <input type="input-box" placeholder="Add new item">
+                <i class="fa-solid fa-check"></i>
+            </form>
+        </div>
+    </div>
+    
+</body>
+<script src="script.js"></script>
+</html>
